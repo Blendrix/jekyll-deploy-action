@@ -30,6 +30,8 @@ git config --global init.defaultBranch main && \
   git init && \
   git config user.name "${ACTOR}" && \
   git config user.email "${ACTOR}@users.noreply.github.com" && \
+  git config --global http.version HTTP/1.1 && \
+  git config --global http.postBuffer 524288000 && \
   git add . && \
   git commit -m "jekyll build from Action ${GITHUB_SHA}" && \
   git push --force $REMOTE_REPO main:$BRANCH && \
